@@ -1,0 +1,16 @@
+[Unit]
+Description=Memory Game
+
+[Service]
+Type=simple
+User=memory2
+Group=memory
+Restart=on-failure
+Environment=MIX_ENV=prod "PORT=4795"
+Environment=LANG=en_US.UTF-8
+
+WorkingDirectory=/home/memory2/memory2
+ExecStart=bash /home/memory2/memory2/start.sh
+
+[Install]
+WantedBy=multi-user.target

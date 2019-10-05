@@ -1,0 +1,25 @@
+  
+<div class="row">
+  <div class="column">
+    <h1 id="index-page">Join a Game</h1>
+    <p>Enter a name you want to join:</p>
+    <input id="gameName" type="text" name="game_name">
+    <button onClick="redirect()">Join Game</button>
+    <label id="error"></label>
+    <script>
+      function redirect(ev){
+        let game_name = document.getElementById('gameName').value;
+        if(game_name !== ""){
+          error.innerHTML = "";
+          window.gameName = game_name;
+          console.log(window.gameName);
+          window.location.replace("/game/" + game_name);
+        }
+        else{
+          let error = document.getElementById('error');
+          error.innerHTML = "Please enter a game name";
+        }
+      };
+    </script>
+  </div>
+</div>
